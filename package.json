@@ -1,0 +1,8 @@
+{
+	"name": "racer-example",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "3.x",
+		"racer": "https://github.com/SLaks/racer.git"
+	}
+}

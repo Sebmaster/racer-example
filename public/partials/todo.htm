@@ -1,0 +1,16 @@
+<h1>ToDo</h1>
+
+<ul>
+    <li data-ng-repeat="entry in entries"><input type="checkbox" data-ng-model="entry.done" data-ng-change="save(entry)"> {{entry.text}}</li>
+</ul>
+
+Add new entry:
+<form data-ng-submit="add()">
+    <dl>
+        <dt>Text:</dt>
+        <dd>
+            <input data-ng-model="newInput" type="text"></dd>
+        <dd>
+            <input type="submit"></dd>
+    </dl>
+</form>

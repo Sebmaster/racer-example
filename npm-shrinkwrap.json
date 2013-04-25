@@ -1,0 +1,350 @@
+{
+  "name": "racer-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": {
+      "version": "3.2.0",
+      "from": "express@3.x",
+      "dependencies": {
+        "connect": {
+          "version": "2.7.6",
+          "from": "connect@2.7.6",
+          "dependencies": {
+            "qs": {
+              "version": "0.5.1",
+              "from": "qs@0.5.1"
+            },
+            "formidable": {
+              "version": "1.0.11",
+              "from": "formidable@1.0.11"
+            },
+            "buffer-crc32": {
+              "version": "0.1.1",
+              "from": "buffer-crc32@0.1.1"
+            },
+            "bytes": {
+              "version": "0.2.0",
+              "from": "bytes@0.2.0"
+            },
+            "pause": {
+              "version": "0.0.1",
+              "from": "pause@0.0.1"
+            }
+          }
+        },
+        "commander": {
+          "version": "0.6.1",
+          "from": "commander@0.6.1"
+        },
+        "range-parser": {
+          "version": "0.0.4",
+          "from": "range-parser@0.0.4"
+        },
+        "mkdirp": {
+          "version": "0.3.5",
+          "from": "mkdirp@~0.3.4"
+        },
+        "cookie": {
+          "version": "0.0.5",
+          "from": "cookie@0.0.5"
+        },
+        "buffer-crc32": {
+          "version": "0.2.1",
+          "from": "buffer-crc32@~0.2.1"
+        },
+        "fresh": {
+          "version": "0.1.0",
+          "from": "fresh@0.1.0"
+        },
+        "methods": {
+          "version": "0.0.1",
+          "from": "methods@0.0.1"
+        },
+        "send": {
+          "version": "0.1.0",
+          "from": "send@0.1.0",
+          "dependencies": {
+            "mime": {
+              "version": "1.2.6",
+              "from": "mime@1.2.6"
+            }
+          }
+        },
+        "cookie-signature": {
+          "version": "1.0.1",
+          "from": "cookie-signature@1.0.1"
+        },
+        "debug": {
+          "version": "0.7.2",
+          "from": "debug@*"
+        }
+      }
+    },
+    "racer": {
+      "version": "0.3.15",
+      "from": "racer@0.x",
+      "dependencies": {
+        "socket.io": {
+          "version": "0.9.13",
+          "from": "socket.io@0.9.13",
+          "dependencies": {
+            "policyfile": {
+              "version": "0.0.4",
+              "from": "policyfile@0.0.4"
+            },
+            "base64id": {
+              "version": "0.1.0",
+              "from": "base64id@0.1.0"
+            },
+            "redis": {
+              "version": "0.7.3",
+              "from": "redis@0.7.3"
+            }
+          }
+        },
+        "socket.io-client": {
+          "version": "0.9.11",
+          "from": "socket.io-client@0.9.11",
+          "dependencies": {
+            "uglify-js": {
+              "version": "1.2.5",
+              "from": "uglify-js@1.2.5"
+            },
+            "ws": {
+              "version": "0.4.25",
+              "from": "ws@0.4.x",
+              "dependencies": {
+                "commander": {
+                  "version": "0.6.1",
+                  "from": "commander@~0.6.1"
+                },
+                "tinycolor": {
+                  "version": "0.0.1",
+                  "from": "tinycolor@0.x"
+                },
+                "options": {
+                  "version": "0.0.5",
+                  "from": "options@latest"
+                }
+              }
+            },
+            "xmlhttprequest": {
+              "version": "1.4.2",
+              "from": "xmlhttprequest@1.4.2"
+            },
+            "active-x-obfuscator": {
+              "version": "0.0.1",
+              "from": "active-x-obfuscator@0.0.1",
+              "dependencies": {
+                "zeparser": {
+                  "version": "0.0.5",
+                  "from": "zeparser@0.0.5"
+                }
+              }
+            }
+          }
+        },
+        "es5-shim": {
+          "version": "2.0.8",
+          "from": "es5-shim@>=1.2.10"
+        },
+        "browserify": {
+          "version": "1.17.3",
+          "from": "browserify@1.17.3",
+          "dependencies": {
+            "detective": {
+              "version": "0.2.1",
+              "from": "detective@~0.2.0",
+              "dependencies": {
+                "esprima": {
+                  "version": "0.9.9",
+                  "from": "esprima@~0.9.9"
+                }
+              }
+            },
+            "buffer-browserify": {
+              "version": "0.0.5",
+              "from": "buffer-browserify@~0.0.1",
+              "dependencies": {
+                "base64-js": {
+                  "version": "0.0.2",
+                  "from": "base64-js@0.0.2"
+                }
+              }
+            },
+            "console-browserify": {
+              "version": "0.1.6",
+              "from": "console-browserify@~0.1.0"
+            },
+            "deputy": {
+              "version": "0.0.4",
+              "from": "deputy@~0.0.3",
+              "dependencies": {
+                "mkdirp": {
+                  "version": "0.3.5",
+                  "from": "mkdirp@~0.3.3"
+                }
+              }
+            },
+            "syntax-error": {
+              "version": "0.0.0",
+              "from": "syntax-error@~0.0.0",
+              "dependencies": {
+                "esprima": {
+                  "version": "0.9.9",
+                  "from": "esprima@~0.9.9"
+                }
+              }
+            },
+            "resolve": {
+              "version": "0.2.8",
+              "from": "resolve@~0.2.0"
+            },
+            "nub": {
+              "version": "0.0.0",
+              "from": "nub@~0.0.0"
+            },
+            "commondir": {
+              "version": "0.0.1",
+              "from": "commondir@~0.0.1"
+            },
+            "coffee-script": {
+              "version": "1.6.2",
+              "from": "coffee-script@1.x.x"
+            },
+            "optimist": {
+              "version": "0.3.7",
+              "from": "optimist@~0.3.4",
+              "dependencies": {
+                "wordwrap": {
+                  "version": "0.0.2",
+                  "from": "wordwrap@~0.0.2"
+                }
+              }
+            },
+            "http-browserify": {
+              "version": "0.1.11",
+              "from": "http-browserify@~0.1.1",
+              "dependencies": {
+                "concat-stream": {
+                  "version": "0.0.8",
+                  "from": "concat-stream@0.0.8"
+                }
+              }
+            },
+            "vm-browserify": {
+              "version": "0.0.1",
+              "from": "vm-browserify@~0.0.0"
+            },
+            "crypto-browserify": {
+              "version": "0.2.1",
+              "from": "crypto-browserify@~0"
+            }
+          }
+        },
+        "uglify-js": {
+          "version": "2.2.5",
+          "from": "uglify-js@2.x",
+          "dependencies": {
+            "source-map": {
+              "version": "0.1.22",
+              "from": "source-map@~0.1.7",
+              "dependencies": {
+                "amdefine": {
+                  "version": "0.0.4",
+                  "from": "amdefine@>=0.0.4"
+                }
+              }
+            },
+            "optimist": {
+              "version": "0.3.7",
+              "from": "optimist@~0.3.5",
+              "dependencies": {
+                "wordwrap": {
+                  "version": "0.0.2",
+                  "from": "wordwrap@~0.0.2"
+                }
+              }
+            }
+          }
+        },
+        "node-uuid": {
+          "version": "1.3.3",
+          "from": "node-uuid@1.3.3"
+        },
+        "hooks": {
+          "version": "0.2.1",
+          "from": "hooks@0.2.1"
+        },
+        "connect": {
+          "version": "2.7.6",
+          "from": "connect@2.x",
+          "dependencies": {
+            "qs": {
+              "version": "0.5.1",
+              "from": "qs@0.5.1"
+            },
+            "formidable": {
+              "version": "1.0.11",
+              "from": "formidable@1.0.11"
+            },
+            "cookie-signature": {
+              "version": "1.0.1",
+              "from": "cookie-signature@1.0.1"
+            },
+            "buffer-crc32": {
+              "version": "0.1.1",
+              "from": "buffer-crc32@0.1.1"
+            },
+            "cookie": {
+              "version": "0.0.5",
+              "from": "cookie@0.0.5"
+            },
+            "send": {
+              "version": "0.1.0",
+              "from": "send@0.1.0",
+              "dependencies": {
+                "mime": {
+                  "version": "1.2.6",
+                  "from": "mime@1.2.6"
+                },
+                "range-parser": {
+                  "version": "0.0.4",
+                  "from": "range-parser@0.0.4"
+                }
+              }
+            },
+            "bytes": {
+              "version": "0.2.0",
+              "from": "bytes@0.2.0"
+            },
+            "fresh": {
+              "version": "0.1.0",
+              "from": "fresh@0.1.0"
+            },
+            "pause": {
+              "version": "0.0.1",
+              "from": "pause@0.0.1"
+            }
+          }
+        },
+        "debug": {
+          "version": "0.7.2",
+          "from": "debug@>=0.7.0"
+        },
+        "ansi-color": {
+          "version": "0.2.1",
+          "from": "ansi-color@>=0.2.1"
+        },
+        "cookie": {
+          "version": "0.0.4",
+          "from": "cookie@0.0.4"
+        },
+        "racer-util": {
+          "version": "0.0.2",
+          "from": "racer-util@0.0.2"
+        }
+      }
+    }
+  }
+}
