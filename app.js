@@ -21,6 +21,10 @@ if (process.env.MONGO_URL) {
 	});
 }
 
+if (process.env.VMC_APP_PORT) { // disable websockets on appfog
+	racer.io.set('transports', ['xhr-polling']);
+}
+
 var serverModel = store.createModel();
 serverModel.set('entries', {});
 serverModel.subscribe('entries', function () { });
