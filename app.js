@@ -5,9 +5,21 @@ var app = express();
 var http = require('http');
 var server = http.createServer(app);
 
-var store = racer.createStore({
-	listen: server
-});
+var store;
+if (process.env.MONGO_URL) {
+	racer.use(require('racer-db-mongo'));
+	store = racer.createStore({
+		listen: server,
+		db: {
+			type: 'Mongo',
+			uri: process.env.MONGO_URL
+		}
+	});
+} else {
+	store = racer.createStore({
+		listen: server
+	});
+}
 
 var serverModel = store.createModel();
 serverModel.set('entries', {});
