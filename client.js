@@ -22,7 +22,7 @@ var module = angular.module('racer.js', [], function ($provide) {
 							cb = args.pop();
 						}
 						args[args.length] = function () {
-							if (cb) cb();
+							if (cb) cb.apply(this, arguments);
 							setImmediate($rootScope.$apply.bind($rootScope));
 						};
 
