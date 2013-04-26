@@ -9,11 +9,9 @@ angular.module('MyApp', ['racer.js']).
 
 function TodoCtrl($scope, model) {
 	$scope.entries = model.get('entries');
-	console.log($scope.entries);
 
 	$scope.add = function () {
 		model.set('entries.' + model.id(), { text: $scope.newInput, done: false });
-		console.log(model.get('entries'));
 	};
 
 	$scope.save = function (entry) {
