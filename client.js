@@ -14,6 +14,7 @@ var module = angular.module('racer.js', [], function ($provide) {
 			var operations = ['set', 'del', 'setNull', 'incr', 'push', 'unshift', 'insert', 'pop', 'shift', 'remove', 'move'];
 			for (var i = 0; i < operations.length; ++i) {
 				(function (i) {
+					// local changes
 					var op = model[operations[i]];
 					model[operations[i]] = function () {
 						var args = Array.prototype.slice.call(arguments);
@@ -28,6 +29,9 @@ var module = angular.module('racer.js', [], function ($provide) {
 
 						op.apply(this, args);
 					};
+
+					// remote changes
+					model.on(operations[i], '*', setImmediate.bind(this, $rootScope.$apply.bind($rootScope)));
 				})(i);
 			}
 
