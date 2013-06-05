@@ -2,7 +2,7 @@ angular.module('racer.js', [], function ($provide) {
 	function extendObject(from, to) {
 		if (from === to) return to;
 
-		if (from.constructor === Array && to.constructor === Array) {
+		if (from.constructor === Array && to && to.constructor === Array) {
 			for (var i = 0; i < from.length; ++i) {
 				to[i] = extendObject(from[i], to[i]);
 			}
