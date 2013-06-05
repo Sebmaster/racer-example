@@ -1,6 +1,6 @@
 angular.module('MyApp', ['racer.js']).
 	config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-		//$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true);
 
 		$routeProvider.
 			when('/', { templateUrl: 'partials/todo.htm', controller: TodoCtrl, resolve: TodoCtrl.resolve }).
@@ -11,7 +11,7 @@ function TodoCtrl($scope, model) {
 	$scope.entries = model.get('entries');
 
 	$scope.add = function () {
-		model.set('entries.' + model.id(), { text: $scope.newInput, done: false });
+		model.add('entries', { text: $scope.newInput, done: false });
 	};
 
 	$scope.save = function (entry) {

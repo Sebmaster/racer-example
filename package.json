@@ -3,7 +3,9 @@
 	"version": "0.0.1",
 	"dependencies": {
 		"express": "3.x",
-		"racer": "x",
-		"racer-db-mongo": "x"
+		"racer": "0.5.x",
+		"livedb-mongo": "x",
+		"racer-browserchannel": "x",
+		"redis": "x"
 	}
 }

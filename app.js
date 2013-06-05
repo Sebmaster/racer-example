@@ -5,31 +5,13 @@ var app = express();
 var http = require('http');
 var server = http.createServer(app);
 
-var store;
-if (process.env.MONGO_URL) {
-	racer.use(require('racer-db-mongo'));
-	store = racer.createStore({
-		listen: server,
-		db: {
-			type: 'Mongo',
-			uri: process.env.MONGO_URL
-		}
-	});
-} else {
-	store = racer.createStore({
-		listen: server
-	});
-}
-
-if (process.env.VMC_APP_PORT) { // disable websockets on appfog
-	racer.io.set('transports', ['xhr-polling']);
-}
-
-var serverModel = store.createModel();
-serverModel.set('entries', {});
-serverModel.subscribe('entries', function () { });
+var store = racer.createStore({
+	server: server,
+	db: require('livedb-mongo')('mongodb://', { safe: true })
+});
 
 app.use(express.static(__dirname + '/public'));
+app.use(require('racer-browserchannel')(store));
 app.use(express.bodyParser());
 
 app.get('/', function (req, res) {
@@ -43,14 +25,14 @@ app.get('/model', function (req, res) {
 			res.status(500);
 			res.send(err);
 		} else {
-			model.bundle(function (bundle) {
-				res.send(bundle.toString());
+			model.bundle(function (err, bundle) {
+				res.send(JSON.stringify(bundle));
 			});
 		}
 	});
 });
 
-racer.js({ entry: __dirname + '/client.js' }, function (err, js) {
+store.bundle(__dirname + '/client.js', function (err, js) {
 	app.get('/script.js', function (req, res) {
 		res.type('js');
 		res.send(js);
