@@ -1,4 +1,4 @@
-angular.module('racer.js', [], function ($provide) {
+angular.module('racer.js', [], ['$provide', function ($provide) {
 	function extendObject(from, to) {
 		if (from === to) return to;
 
@@ -62,4 +62,4 @@ angular.module('racer.js', [], function ($provide) {
 
 		return def.promise;
 	}]);
-});
+}]);
