@@ -5,7 +5,6 @@
 		"express": "3.x",
 		"racer": "0.5.x",
 		"livedb-mongo": "x",
-		"racer-browserchannel": "x",
-		"redis": "x"
+		"racer-browserchannel": "x"
 	}
 }
