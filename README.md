@@ -1,12 +1,12 @@
-﻿racer-angular example
+racer-angular example
 ===
 
 This is a small example on how to connect angular.js and racer.js to synchronize the JS model.
 
 How to Use
 ---
-1. Insert Mongo-URL in /app.js
-2. Start local redis server
+1. Set REDISCLOUD_URL and MONGOLAB_URI (or use heroku)
+2. Start local servers
 3. node app.js
 
 LICENSE
