@@ -1,4 +1,4 @@
-﻿var racer = require('racer');
+var racer = require('racer');
 var express = require('express');
 
 var app = express();
@@ -41,4 +41,4 @@ store.bundle(__dirname + '/client.js', function (err, js) {
 
 
 
-server.listen(process.env.VMC_APP_PORT || 8081);
+server.listen(process.env.PORT || 8081);
