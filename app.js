@@ -7,7 +7,7 @@ var server = http.createServer(app);
 
 var store = racer.createStore({
 	server: server,
-	db: require('livedb-mongo')('mongodb://', { safe: true })
+	db: require('livedb-mongo')(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL, { safe: true })
 });
 
 app.use(express.static(__dirname + '/public'));
