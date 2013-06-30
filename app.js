@@ -7,7 +7,8 @@ var server = http.createServer(app);
 
 var store = racer.createStore({
 	server: server,
-	db: require('livedb-mongo')(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL, { safe: true })
+	db: require('livedb-mongo')(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL, { safe: true }),
+    redis: require('redis-url').connect(process.env.REDISCLOUD_URL)
 });
 
 app.use(express.static(__dirname + '/public'));
