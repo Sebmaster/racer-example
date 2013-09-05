@@ -21,6 +21,8 @@ angular.module('racer.js', [], ['$provide', function ($provide) {
 			}
 
 			return to;
+		} else if (to === undefined) {
+			return extendObject(from, new from.constructor());
 		} else {
 			return from;
 		}
@@ -47,7 +49,8 @@ angular.module('racer.js', [], ['$provide', function ($provide) {
 					paths[path] = oldGet.call(model, path);
 
 					model.on('all', path ? path + '**' : '**', function () {
-						var newData = oldGet.call(model, path);
+						// clone data since angular would set $ properties in the racer object otherwise
+						var newData = extendObject(oldGet.call(model, path), undefined);
 						paths[path] = extendObject(newData, paths[path]);
 						setImmediate($rootScope.$apply.bind($rootScope));
 					});
