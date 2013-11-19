@@ -9,14 +9,16 @@ angular.module('racer.js', [], ['$provide', function ($provide) {
 			to.splice(from.length, to.length);
 
 			return to;
-		} else if (from.constructor === Object && to && to.constructor === Object) {
+		} else if (from instanceof Object && to && to instanceof Object) {
 			for (var key in to) {
-				if (typeof from[key] === 'undefined') {
+				if (typeof from[key] === 'undefined' || key === '$$hashKey') {
 					delete to[key];
 				}
 			}
 
 			for (var key in from) {
+				if (key === '$$hashKey') continue;
+
 				to[key] = extendObject(from[key], to[key]);
 			}
 
@@ -46,11 +48,11 @@ angular.module('racer.js', [], ['$provide', function ($provide) {
 			var oldGet = model.get;
 			model.get = function (path) {
 				if (!paths[path]) {
-					paths[path] = oldGet.call(model, path);
+					paths[path] = extendObject(oldGet.call(model, path));
 
 					model.on('all', path ? path + '**' : '**', function () {
 						// clone data since angular would set $ properties in the racer object otherwise
-						var newData = extendObject(oldGet.call(model, path), undefined);
+						var newData = extendObject(oldGet.call(model, path));
 						paths[path] = extendObject(newData, paths[path]);
 						setImmediate($rootScope.$apply.bind($rootScope));
 					});
