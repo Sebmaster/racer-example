@@ -6,8 +6,13 @@ This is a small example on how to connect angular.js and racer.js to synchronize
 How to Use
 ---
 1. Set REDISCLOUD_URL and MONGOLAB_URI (or use heroku)
-2. Start local servers
-3. node app.js
+
+or
+
+1. Start local servers
+2. node app.js
+
+You can set REDISCLOUD_URL to any remote redis server instance, doesn't matter if it's from REDISCLOUD. Same with MONGOLAB_URI. app.js will fall back to local servers by default if no environment variables are given.
 
 LICENSE
 ---
